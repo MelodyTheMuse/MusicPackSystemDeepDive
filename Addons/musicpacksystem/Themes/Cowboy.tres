@@ -1,0 +1,9 @@
+[gd_resource type="AudioStreamInteractive" load_steps=2 format=3 uid="uid://bo1l1sv7vdfyf"]
+
+[ext_resource type="AudioStream" uid="uid://dqj2vcjp0j0ed" path="res://Addons/musicpacksystem/Moods/Cowboy_quiet.tres" id="1_f08ad"]
+
+[resource]
+clip_count = 1
+clip_0/name = &"Cowboy Quiet"
+clip_0/stream = ExtResource("1_f08ad")
+clip_0/auto_advance = 0

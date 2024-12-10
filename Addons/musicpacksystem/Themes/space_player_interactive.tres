@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamInteractive" load_steps=3 format=3 uid="uid://dmwfwedms48eg"]
+
+[ext_resource type="AudioStream" uid="uid://dqfqmyekbvia" path="res://Addons/musicpacksystem/Moods/space_conversation.tres" id="1_iwfy5"]
+[ext_resource type="AudioStream" uid="uid://cqm5oo1nsfvy7" path="res://Addons/musicpacksystem/Moods/space_quiet.tres" id="2_x8403"]
+
+[resource]
+clip_count = 2
+clip_0/name = &"Space Conversation"
+clip_0/stream = ExtResource("1_iwfy5")
+clip_0/auto_advance = 0
+clip_1/name = &"Space Quiet"
+clip_1/stream = ExtResource("2_x8403")
+clip_1/auto_advance = 0
