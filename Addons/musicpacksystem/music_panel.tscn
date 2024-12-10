@@ -1,0 +1,85 @@
+[gd_scene load_steps=3 format=3 uid="uid://chxgaoc4by4an"]
+
+[ext_resource type="Script" path="res://Addons/musicpacksystem/button.gd" id="1_jlacb"]
+[ext_resource type="Script" path="res://Addons/musicpacksystem/option_button_mood.gd" id="2_4c2ir"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="labels" type="Node" parent="."]
+
+[node name="Label-Theme" type="Label" parent="labels"]
+offset_left = 2.0
+offset_top = 18.0
+offset_right = 55.0
+offset_bottom = 41.0
+text = "Theme"
+
+[node name="Label-Mood" type="Label" parent="labels"]
+offset_left = 3.0
+offset_top = 82.0
+offset_right = 48.0
+offset_bottom = 105.0
+text = "Mood"
+
+[node name="Label-Bus" type="Label" parent="labels"]
+offset_left = 2.0
+offset_top = 135.0
+offset_right = 47.0
+offset_bottom = 158.0
+text = "Bus"
+
+[node name="Label-Volume" type="Label" parent="labels"]
+offset_left = 1.0
+offset_top = 174.0
+offset_right = 60.0
+offset_bottom = 197.0
+text = "Volume"
+
+[node name="Label-Pitch" type="Label" parent="labels"]
+offset_left = 1.0
+offset_top = 236.0
+offset_right = 60.0
+offset_bottom = 259.0
+text = "Pitch"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 352.0
+offset_right = 80.0
+offset_bottom = 383.0
+text = "BUTTON
+"
+script = ExtResource("1_jlacb")
+
+[node name="Dropdowns" type="Node" parent="."]
+
+[node name="OptionButton-Theme" type="OptionButton" parent="Dropdowns"]
+offset_left = 88.0
+offset_top = 31.0
+offset_right = 120.0
+offset_bottom = 51.0
+
+[node name="OptionButton-Mood" type="OptionButton" parent="Dropdowns"]
+offset_left = 88.0
+offset_top = 89.0
+offset_right = 120.0
+offset_bottom = 109.0
+item_count = 1
+script = ExtResource("2_4c2ir")
+
+[node name="OptionButton-Bus" type="OptionButton" parent="Dropdowns"]
+offset_left = 88.0
+offset_top = 143.0
+offset_right = 120.0
+offset_bottom = 163.0
+
+[connection signal="pressed" from="Button" to="Button" method="_on_print_hello_pressed"]
+[connection signal="item_selected" from="Dropdowns/OptionButton-Mood" to="Dropdowns/OptionButton-Mood" method="_on_item_selected"]
