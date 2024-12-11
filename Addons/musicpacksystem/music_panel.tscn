@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://chxgaoc4by4an"]
+[gd_scene load_steps=4 format=3 uid="uid://chxgaoc4by4an"]
 
 [ext_resource type="Script" path="res://Addons/musicpacksystem/music_panel.gd" id="1_yu7vi"]
 [ext_resource type="Script" path="res://Addons/musicpacksystem/Scripts/option_button_mood.gd" id="2_4c2ir"]
 [ext_resource type="Script" path="res://Addons/musicpacksystem/Scripts/Themebutton.gd" id="2_44b37"]
-[ext_resource type="Script" path="res://Addons/musicpacksystem/ButtonToSave.gd" id="4_d257o"]
 
 [node name="Control" type="MarginContainer"]
 anchors_preset = 15
@@ -76,9 +75,10 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="GridContainer"]
 layout_mode = 2
-script = ExtResource("4_d257o")
+text = "Save to scene
+as area"
 
 [connection signal="item_selected" from="GridContainer/OptionButton-Theme" to="GridContainer/OptionButton-Theme" method="_on_item_selected"]
 [connection signal="ready" from="GridContainer/OptionButton-Theme" to="GridContainer/OptionButton-Theme" method="_on_ready"]
 [connection signal="item_selected" from="GridContainer/OptionButton-Mood" to="GridContainer/OptionButton-Mood" method="_on_item_selected"]
-[connection signal="pressed" from="GridContainer/Button" to="GridContainer/OptionButton-Theme" method="_on_button_pressed"]
+[connection signal="pressed" from="GridContainer/Button" to="." method="DTO_Update"]

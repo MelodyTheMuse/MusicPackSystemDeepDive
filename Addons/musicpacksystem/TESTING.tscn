@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bpka1q2jyju5q" path="res://Addons/musicpacksystem/Add-To-Game/AudioPlayer.tscn" id="1_8aqox"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Testing" type="Node2D"]
 
 [node name="AudioPlayer" parent="." instance=ExtResource("1_8aqox")]
+
+[editable path="AudioPlayer"]

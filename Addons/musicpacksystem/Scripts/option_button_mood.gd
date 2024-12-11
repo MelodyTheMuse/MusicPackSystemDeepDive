@@ -5,7 +5,6 @@ var list_themes:Array
 
 func _on_item_selected(index: int) -> void:
 	pass
-	
 	var ASI = "yay"
 	
 func load_dir():
@@ -20,4 +19,5 @@ func load_dir():
 				list_themes.append(item)
 				filename = dir.get_next()
 func get_mood():
+	load_dir()
 	return list_themes[theme_button.selected].get_clip_stream(selected)
