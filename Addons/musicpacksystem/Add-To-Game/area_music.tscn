@@ -6,7 +6,10 @@
 
 [node name="Area2D2" type="Area2D"]
 script = ExtResource("1_7mim7")
+mood = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_t5r5h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
