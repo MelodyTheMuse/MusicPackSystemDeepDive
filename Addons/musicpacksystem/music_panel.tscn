@@ -1,97 +1,84 @@
-[gd_scene load_steps=6 format=3 uid="uid://chxgaoc4by4an"]
+[gd_scene load_steps=5 format=3 uid="uid://chxgaoc4by4an"]
 
-[ext_resource type="Script" path="res://Addons/musicpacksystem/button.gd" id="1_jlacb"]
-[ext_resource type="Script" path="res://Addons/musicpacksystem/option_button_mood.gd" id="2_4c2ir"]
-[ext_resource type="Script" path="res://Addons/musicpacksystem/Themebutton.gd" id="2_44b37"]
-[ext_resource type="AudioStream" uid="uid://dmwfwedms48eg" path="res://Addons/musicpacksystem/Themes/space_player_interactive.tres" id="3_84kem"]
-[ext_resource type="AudioStream" uid="uid://bo1l1sv7vdfyf" path="res://Addons/musicpacksystem/Themes/Cowboy.tres" id="4_66dj8"]
+[ext_resource type="Script" path="res://Addons/musicpacksystem/music_panel.gd" id="1_yu7vi"]
+[ext_resource type="Script" path="res://Addons/musicpacksystem/Scripts/option_button_mood.gd" id="2_4c2ir"]
+[ext_resource type="Script" path="res://Addons/musicpacksystem/Scripts/Themebutton.gd" id="2_44b37"]
+[ext_resource type="Script" path="res://Addons/musicpacksystem/ButtonToSave.gd" id="4_d257o"]
 
-[node name="Control" type="Control"]
-layout_mode = 3
+[node name="Control" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_yu7vi")
 
-[node name="labels" type="Node" parent="."]
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+columns = 2
 
-[node name="Label-Theme" type="Label" parent="labels"]
-offset_left = 240.0
-offset_top = 24.0
-offset_right = 293.0
-offset_bottom = 47.0
+[node name="Label-Theme" type="Label" parent="GridContainer"]
+layout_mode = 2
 text = "Theme"
 
-[node name="Label-Mood" type="Label" parent="labels"]
-offset_left = 241.0
-offset_top = 88.0
-offset_right = 286.0
-offset_bottom = 111.0
-text = "Mood"
-
-[node name="Label-Bus" type="Label" parent="labels"]
-offset_left = 240.0
-offset_top = 141.0
-offset_right = 285.0
-offset_bottom = 164.0
-text = "Bus"
-
-[node name="Label-Volume" type="Label" parent="labels"]
-offset_left = 239.0
-offset_top = 180.0
-offset_right = 298.0
-offset_bottom = 203.0
-text = "Volume"
-
-[node name="Label-Pitch" type="Label" parent="labels"]
-offset_left = 239.0
-offset_top = 242.0
-offset_right = 298.0
-offset_bottom = 265.0
-text = "Pitch"
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 352.0
-offset_right = 80.0
-offset_bottom = 383.0
-text = "BUTTON
-"
-script = ExtResource("1_jlacb")
-
-[node name="Dropdowns" type="Node" parent="."]
-
-[node name="OptionButton-Theme" type="OptionButton" parent="Dropdowns" node_paths=PackedStringArray("MoodBox")]
-offset_left = 353.0
-offset_top = 34.0
-offset_right = 385.0
-offset_bottom = 54.0
+[node name="OptionButton-Theme" type="OptionButton" parent="GridContainer" node_paths=PackedStringArray("MoodBox")]
+layout_mode = 2
 size_flags_vertical = 0
+selected = 0
 allow_reselect = true
+item_count = 2
+popup/item_0/text = "Cowboy"
+popup/item_1/text = "space_player_interactive"
+popup/item_1/id = 1
 script = ExtResource("2_44b37")
-list_themes = [ExtResource("3_84kem"), ExtResource("4_66dj8")]
 MoodBox = NodePath("../OptionButton-Mood")
 
-[node name="OptionButton-Mood" type="OptionButton" parent="Dropdowns"]
-offset_left = 353.0
-offset_top = 92.0
-offset_right = 385.0
-offset_bottom = 112.0
+[node name="Label-Mood" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Mood"
+
+[node name="OptionButton-Mood" type="OptionButton" parent="GridContainer" node_paths=PackedStringArray("theme_button")]
+layout_mode = 2
 size_flags_vertical = 0
+selected = 0
 allow_reselect = true
+item_count = 1
+popup/item_0/text = "Cowboy Quiet"
 script = ExtResource("2_4c2ir")
+theme_button = NodePath("../OptionButton-Theme")
 
-[node name="OptionButton-Bus" type="OptionButton" parent="Dropdowns"]
-offset_left = 353.0
-offset_top = 146.0
-offset_right = 385.0
-offset_bottom = 166.0
+[node name="Label-Bus" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Bus"
+
+[node name="OptionButton-Bus" type="OptionButton" parent="GridContainer"]
+layout_mode = 2
 size_flags_vertical = 0
 
-[connection signal="pressed" from="Button" to="Button" method="_on_print_hello_pressed"]
-[connection signal="item_selected" from="Dropdowns/OptionButton-Theme" to="Dropdowns/OptionButton-Theme" method="_on_item_selected"]
-[connection signal="ready" from="Dropdowns/OptionButton-Theme" to="Dropdowns/OptionButton-Theme" method="_on_ready"]
-[connection signal="item_selected" from="Dropdowns/OptionButton-Mood" to="Dropdowns/OptionButton-Mood" method="_on_item_selected"]
+[node name="Label-Volume" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Volume"
+
+[node name="labels" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Label-Pitch" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Pitch"
+
+[node name="Dropdowns" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+script = ExtResource("4_d257o")
+
+[connection signal="item_selected" from="GridContainer/OptionButton-Theme" to="GridContainer/OptionButton-Theme" method="_on_item_selected"]
+[connection signal="ready" from="GridContainer/OptionButton-Theme" to="GridContainer/OptionButton-Theme" method="_on_ready"]
+[connection signal="item_selected" from="GridContainer/OptionButton-Mood" to="GridContainer/OptionButton-Mood" method="_on_item_selected"]
+[connection signal="pressed" from="GridContainer/Button" to="GridContainer/OptionButton-Theme" method="_on_button_pressed"]

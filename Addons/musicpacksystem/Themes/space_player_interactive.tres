@@ -11,3 +11,4 @@ clip_0/auto_advance = 0
 clip_1/name = &"Space Quiet"
 clip_1/stream = ExtResource("2_x8403")
 clip_1/auto_advance = 0
+metadata/Name = &"Space"

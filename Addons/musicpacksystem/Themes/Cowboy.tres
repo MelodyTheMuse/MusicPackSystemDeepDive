@@ -7,3 +7,4 @@ clip_count = 1
 clip_0/name = &"Cowboy Quiet"
 clip_0/stream = ExtResource("1_f08ad")
 clip_0/auto_advance = 0
+metadata/Name = &"Cowboy"

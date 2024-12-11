@@ -21,3 +21,7 @@ project/assembly_name="MusicPackSystem"
 [editor]
 
 version_control/plugin_name="music_screen"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/musicpacksystem/plugin.cfg", "res://addons/plugin_refresher/plugin.cfg")
