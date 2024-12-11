@@ -1,6 +1,6 @@
 Hello!
 
-This is the works place where I create my music pack with the system attached!
+This is the work place where I create my music pack with the system attached!
 Once the system is ready for download and installition there will be a release version on the releases, this will include the installation method. 
 
 What is this pack?
