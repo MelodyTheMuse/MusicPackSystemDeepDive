@@ -8,7 +8,7 @@
 [node name="Testing" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(11, 4)
+position = Vector2(2, -28)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="CharacterBody2D"]
 
@@ -16,11 +16,11 @@ position = Vector2(11, 4)
 shape = SubResource("CapsuleShape2D_hxad2")
 
 [node name="Music Player" parent="." instance=ExtResource("1_f6ufq")]
-position = Vector2(-41, 2)
+position = Vector2(18, -30)
 theme = ExtResource("3_njmw5")
 mood = 1
 
-[node name="Music Player2" parent="." instance=ExtResource("1_f6ufq")]
-position = Vector2(63, -2)
+[node name="Music Player3" parent="." instance=ExtResource("1_f6ufq")]
+position = Vector2(-47, -5)
 theme = ExtResource("3_njmw5")
-mood = 1
+mood = 0

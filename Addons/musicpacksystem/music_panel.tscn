@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://chxgaoc4by4an"]
 
-[ext_resource type="Script" path="res://Addons/musicpacksystem/music_panel.gd" id="1_yu7vi"]
+[ext_resource type="Script" path="res://Addons/musicpacksystem/Scripts/music_panel.gd" id="1_yu7vi"]
 [ext_resource type="Script" path="res://Addons/musicpacksystem/Scripts/option_button_mood.gd" id="2_4c2ir"]
 [ext_resource type="Script" path="res://Addons/musicpacksystem/Scripts/Themebutton.gd" id="2_44b37"]
 
