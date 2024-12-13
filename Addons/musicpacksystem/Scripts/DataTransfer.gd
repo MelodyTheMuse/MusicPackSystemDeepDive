@@ -15,11 +15,13 @@ func _on_body_entered(body: Node2D) -> void:
 	for I in get_parent().get_children():
 		if I is Default_Music:
 			default_music = I
+			ASP = default_music.Audio_stream
 			break
-	for I in body.get_children():
-		if  I is AudioStreamPlayer:
-			ASP =  I
-			break
+	#for I in body.get_children():
+		#if  I is AudioStreamPlayer:
+			#ASP =  I
+			#break 
+			#Not used in current project, could be used later again when changing items
 	if ASP.stream != theme:
 		ASP.stream = theme
 		ASP.play()
@@ -34,7 +36,7 @@ func _on_body_entered(body: Node2D) -> void:
 		if default_music != null:
 			ASP.stream = default_music.theme
 			ASP.play()
-			if default_music.current_playing_index != default_music.mood:
+			if default_music.current_playing_index != mood:
 				ASP.get_stream_playback().switch_to_clip(default_music.mood)
 				default_music.current_playing_index = default_music.mood
 	

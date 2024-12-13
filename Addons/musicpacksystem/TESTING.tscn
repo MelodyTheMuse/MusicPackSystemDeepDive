@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2khouih6pio4"]
+[gd_scene load_steps=5 format=3 uid="uid://b2khouih6pio4"]
 
 [ext_resource type="PackedScene" uid="uid://2hdae568tr1b" path="res://Addons/musicpacksystem/Add-To-Game/Default_Music.tscn" id="1_n68jr"]
 [ext_resource type="PackedScene" uid="uid://v8smx0hm1a8i" path="res://Addons/musicpacksystem/Prefabs/area_music.tscn" id="2_onpao"]
-[ext_resource type="Script" path="res://Addons/musicpacksystem/Scripts/DataTransfer.gd" id="3_k3gfm"]
 [ext_resource type="AudioStream" uid="uid://bo1l1sv7vdfyf" path="res://Addons/musicpacksystem/Themes/Cowboy.tres" id="5_bs20h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hxad2"]
@@ -18,9 +17,5 @@ position = Vector2(182, 27)
 position = Vector2(34, 11)
 shape = SubResource("CapsuleShape2D_hxad2")
 
-[node name="Music Player" type="Area2D" parent="." instance=ExtResource("2_onpao")]
-script = ExtResource("3_k3gfm")
+[node name="Music Player" parent="." instance=ExtResource("2_onpao")]
 theme = ExtResource("5_bs20h")
-
-[connection signal="body_entered" from="Music Player" to="Music Player" method="_on_body_entered"]
-[connection signal="body_exited" from="Music Player" to="Music Player" method="_on_body_exited"]
