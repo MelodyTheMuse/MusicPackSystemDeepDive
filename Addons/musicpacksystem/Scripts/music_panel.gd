@@ -27,14 +27,19 @@ func UpdateGUI():
 			theme_script.audio_player_node = AP
 			break
 	
-func DTO_Update():
-	area = area_scene.instantiate()
+func DTO_Set_items():
+	
 	area.theme = theme_script.get_audio_player()
 	area.mood = mood_script.get_mood()
 	area.name = "Music Player"
 	active_scene.add_child(area, true)
 	area.owner = active_scene
 	print("Saved to the scene")
-	
-	
+
+func DTO_Set_Defaults():
+	pass
+
+func DTO_Update():
+	area = area_scene.instantiate()
+	DTO_Set_items()
 	

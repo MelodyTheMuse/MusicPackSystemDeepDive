@@ -1,7 +1,7 @@
 [gd_resource type="AudioStreamPlaylist" load_steps=2 format=3 uid="uid://dqj2vcjp0j0ed"]
 
-[ext_resource type="AudioStream" uid="uid://b0dxg21hrge2v" path="res://Addons/musicpacksystem/Music-Tracks/space-intro-124261.mp3" id="1_vgy4p"]
+[ext_resource type="AudioStream" uid="uid://b0dxg21hrge2v" path="res://Addons/musicpacksystem/Music-Tracks/space-intro-124261.mp3" id="1_mjxjb"]
 
 [resource]
 stream_count = 1
-stream_0 = ExtResource("1_vgy4p")
+stream_0 = ExtResource("1_mjxjb")
