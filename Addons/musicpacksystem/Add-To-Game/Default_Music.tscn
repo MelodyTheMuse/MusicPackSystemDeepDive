@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://2hdae568tr1b"]
+
+[ext_resource type="Script" path="res://Addons/musicpacksystem/Scripts/default_music.gd" id="1_07n4i"]
+[ext_resource type="AudioStream" uid="uid://dmwfwedms48eg" path="res://Addons/musicpacksystem/Themes/space_player_interactive.tres" id="2_l6rm0"]
+
+[node name="DefaultMusic" type="Node"]
+script = ExtResource("1_07n4i")
+theme = ExtResource("2_l6rm0")
+mood = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

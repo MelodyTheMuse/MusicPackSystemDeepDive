@@ -1,13 +1,11 @@
 @tool
 extends OptionButton
 var audio_player_node
-var DS:DynamicStream
-var Ds_scene:PackedScene = preload("res://Addons/musicpacksystem/Add-To-Game/AudioPlayer.tscn")
+var Ds_scene:PackedScene = preload("../Prefabs/AudioPlayer.tscn")
 @export var MoodBox = OptionButton.new()
 var list_themes : Array= []
 
 func _on_ready():
-	DS = Ds_scene.instantiate()
 	load_dir()
 	clear()
 	for I in range(list_themes.size()):
@@ -39,8 +37,4 @@ func load_dir():
 				filename = dir.get_next()
 				
 func get_audio_player():
-	
 	return list_themes[selected]
-
-func _on_button_pressed() -> void:
-	print(list_themes[selected])

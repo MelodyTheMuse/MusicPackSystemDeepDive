@@ -1,26 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2khouih6pio4"]
+[gd_scene load_steps=6 format=3 uid="uid://b2khouih6pio4"]
 
-[ext_resource type="PackedScene" uid="uid://v8smx0hm1a8i" path="res://Addons/musicpacksystem/Add-To-Game/area_music.tscn" id="1_f6ufq"]
-[ext_resource type="AudioStream" uid="uid://dmwfwedms48eg" path="res://Addons/musicpacksystem/Themes/space_player_interactive.tres" id="3_njmw5"]
+[ext_resource type="PackedScene" uid="uid://2hdae568tr1b" path="res://Addons/musicpacksystem/Add-To-Game/Default_Music.tscn" id="1_n68jr"]
+[ext_resource type="PackedScene" uid="uid://v8smx0hm1a8i" path="res://Addons/musicpacksystem/Prefabs/area_music.tscn" id="2_onpao"]
+[ext_resource type="Script" path="res://Addons/musicpacksystem/Scripts/DataTransfer.gd" id="3_k3gfm"]
+[ext_resource type="AudioStream" uid="uid://bo1l1sv7vdfyf" path="res://Addons/musicpacksystem/Themes/Cowboy.tres" id="5_bs20h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hxad2"]
 
 [node name="Testing" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(2, -28)
+[node name="DefaultMusic" parent="." instance=ExtResource("1_n68jr")]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(182, 27)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(34, 11)
 shape = SubResource("CapsuleShape2D_hxad2")
 
-[node name="Music Player" parent="." instance=ExtResource("1_f6ufq")]
-position = Vector2(18, -30)
-theme = ExtResource("3_njmw5")
-mood = 1
+[node name="Music Player" type="Area2D" parent="." instance=ExtResource("2_onpao")]
+script = ExtResource("3_k3gfm")
+theme = ExtResource("5_bs20h")
 
-[node name="Music Player3" parent="." instance=ExtResource("1_f6ufq")]
-position = Vector2(-47, -5)
-theme = ExtResource("3_njmw5")
-mood = 0
+[connection signal="body_entered" from="Music Player" to="Music Player" method="_on_body_entered"]
+[connection signal="body_exited" from="Music Player" to="Music Player" method="_on_body_exited"]

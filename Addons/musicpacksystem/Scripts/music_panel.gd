@@ -4,7 +4,7 @@ var active_scene:Node
 @onready var theme_script = $"GridContainer/OptionButton-Theme"
 @onready var mood_script = $"GridContainer/OptionButton-Mood"
 @onready var DTO = Audio_transfere.new()
-@onready var area_scene:PackedScene = preload("res://Addons/musicpacksystem/Add-To-Game/area_music.tscn") 
+@onready var area_scene:PackedScene = preload("../Prefabs/area_music.tscn") 
 var area
 var shape: CollisionShape2D
 func refresh_gui(node):
@@ -20,26 +20,19 @@ func _ready():
 func UpdateGUI():
 	var AP 
 	for I in active_scene.get_children():
-		print(active_scene)
 		if I is DynamicStream :
 			AP = I
-			print("AP found")
 			theme_script.audio_player_node = AP
 			break
 	
-func DTO_Set_items():
-	
+func DTO_Set_items(area):
+	pass
+
+func DTO_Update():
+	area = area_scene.instantiate()
 	area.theme = theme_script.get_audio_player()
 	area.mood = mood_script.get_mood()
 	area.name = "Music Player"
 	active_scene.add_child(area, true)
 	area.owner = active_scene
-	print("Saved to the scene")
-
-func DTO_Set_Defaults():
-	pass
-
-func DTO_Update():
-	area = area_scene.instantiate()
-	DTO_Set_items()
 	

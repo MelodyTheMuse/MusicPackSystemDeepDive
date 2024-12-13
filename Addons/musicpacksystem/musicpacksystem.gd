@@ -1,11 +1,9 @@
 @tool
 extends EditorPlugin
 var DS:DynamicStream
-const MusicPanel =preload("res://Addons/musicpacksystem/music_panel.tscn")
+const MusicPanel =preload("../musicpacksystem/music_panel.tscn")
 var editing_scene
-
 var music_panel_instance
-
 
 func _enter_tree():
 	music_panel_instance = MusicPanel.instantiate()

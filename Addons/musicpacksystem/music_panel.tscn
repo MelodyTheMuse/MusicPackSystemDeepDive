@@ -78,6 +78,10 @@ layout_mode = 2
 text = "Save to scene
 as area"
 
+[node name="Button2" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Open defaults"
+
 [connection signal="item_selected" from="GridContainer/OptionButton-Theme" to="GridContainer/OptionButton-Theme" method="_on_item_selected"]
 [connection signal="ready" from="GridContainer/OptionButton-Theme" to="GridContainer/OptionButton-Theme" method="_on_ready"]
 [connection signal="item_selected" from="GridContainer/OptionButton-Mood" to="GridContainer/OptionButton-Mood" method="_on_item_selected"]
