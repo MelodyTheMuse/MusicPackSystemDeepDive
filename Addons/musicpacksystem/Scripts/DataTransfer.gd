@@ -25,7 +25,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if ASP.stream != theme:
 		ASP.stream = theme
 		ASP.play()
-	if default_music.current_playing_index != default_music.mood:
+	if default_music.current_playing_index != mood:
 		ASP.get_stream_playback().switch_to_clip(mood)
 		default_music.current_playing_index = mood
 
